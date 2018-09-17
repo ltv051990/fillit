@@ -1,24 +1,54 @@
 # Fillit
- 
-Filler is an algorithmic game which consists in filling a grid of a known size in advance
-with pieces of random size and shapes, without the pieces being stacked more than one
-square above each other and without them exceeding the grid. If one of these conditions
-is not met, the game stops.
 
-<img width="1086" alt="test" src="https://user-images.githubusercontent.com/26527567/45599200-04494380-b9f0-11e8-8990-97a1f763a4b5.png">
+<img width="698" alt="st123" src="https://user-images.githubusercontent.com/26527567/45608892-f3cfb200-ba5d-11e8-9b3c-5b42d0714ffe.png">
 
-Each successfully placed piece yields a number of points, and has only one player, the
-goal of the game could be to get the best score possible. However, it is with two players
-that the filler takes all his interest. Each player has for the purpose of placing as many
-pieces as possible while attempting to prevent his opponent from doing the same. At the
-end of the game, the one with the most points wins the match...
+Fillit is a project that let you discover and/or familiarize yourself with a recurring
+problematic in programming: searching the optimal solution among a huge set of possibilities,
+in a respectable timing. In this particular project, you will have to find a way to
+assemble a given Tetriminos set altogether in the smallest possible square.
 
-<img width="1206" alt="screen shot 2018-09-16 at 5 51 49 pm" src="https://user-images.githubusercontent.com/26527567/45599243-a36e3b00-b9f0-11e8-92a7-39a2d78885a4.png">
+<img width="622" alt="st1232" src="https://user-images.githubusercontent.com/26527567/45608938-35605d00-ba5e-11e8-83a5-a2c5c307eed0.png">
 
-The objectives of this project always bring together the usual objectives of early curriculum
-projects: rigour, practice of C and practice of elementary algorithms. But unlike
-a simpler game like Fillit, it’s no longer just a matter of arranging your pieces as efficiently
-as possible, but now of preventing your opponent from doing so! You will therefore have
-to create your own filling algorithm to counter the enemy algorithm.
+A Tetriminos is a 4-blocks geometric figure you probably already heard of, thanks to
+the popular game Tetris.
 
-<img width="1207" alt="screen shot 2018-09-16 at 5 52 19 pm" src="https://user-images.githubusercontent.com/26527567/45599245-a701c200-b9f0-11e8-8323-e093100e8f0d.png">
+<img width="624" alt="st1232222" src="https://user-images.githubusercontent.com/26527567/45608981-6a6caf80-ba5e-11e8-9858-d12e01dc9a94.png">
+
+Your executable must take only one parameter, a file which contains a list of Tetriminos
+to assemble. This file has a very specific format : every Tetrimino must exactly fit in a
+4 by 4 chars square and all Tetrimino are separated by an newline each.
+
+<img width="664" alt="st1232222" src="https://user-images.githubusercontent.com/26527567/45609004-91c37c80-ba5e-11e8-8632-55bbd6c64695.png">
+
+If the number of parameters sent to your executable is not 1, your program must display
+its usage and exit properly. If you don’t know what a usage is, execute the command
+cp without arguments in your Shell. It will give you an idea. Your file should contain
+between 1 and 26 Tetriminos.
+
+<img width="638" alt="st1232222" src="https://user-images.githubusercontent.com/26527567/45609081-0a2a3d80-ba5f-11e8-858e-6c7691cb5e0a.png">
+
+The description of a Tetriminos must respect the following rules :
+• Precisely 4 lines of 4 characters, each followed by a new line (well... a 4x4 square).
+• A Tetrimino is a classic piece of Tetris composed of 4 blocks.
+• Each character must be either a block character(’#’ ) or an empty character (’.’).
+• Each block of a Tetrimino must touch at least one other block on any of his 4 sides
+(up, down, left and right).
+
+A few examples of valid descriptions of Tetriminos:
+
+A few examples of invalid descriptions of Tetriminos
+
+The goal of this project is to arrange every Tetriminos with each others in order to make
+the smallest possible square. But in some cases, this square should contains holes when
+some given pieces won’t fit in perfectly with others.
+
+Even if they are embedded in a 4x4 square, each Tetrimino is defined by its minimal
+boundaries (their ’#’). The 12 remaining empty characters will be ignored for the
+Tetriminos assemble process.
+
+<img width="622" alt="st1232222" src="https://user-images.githubusercontent.com/26527567/45609033-c0d9ee00-ba5e-11e8-90a7-2fc9a4e6377b.png">
+
+Tetriminos are ordered by they apparition order in the file. Among all the possible
+candidates for the smallest square, we only accept the one where Tetriminos is placed on
+their most upper-left position.
+
